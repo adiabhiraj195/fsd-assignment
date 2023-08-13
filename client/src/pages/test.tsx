@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import TextField from '../component/atoms/text-field';
+import TextField from '../component/atoms/text-field/text-field';
 import API from '../service/api';
 import AuthService from '../service/auth-service';
 
@@ -27,6 +27,7 @@ const Test=()=> {
     return (
     <div>
         <TextField
+        id='test'
         type='text'
         placeholder='phone'
         value={phone}

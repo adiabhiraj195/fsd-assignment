@@ -14,6 +14,7 @@ function App() {
           <Route path='/' Component={Register} />
           <Route path='/login' Component={Login}/>
           <Route path='/test' Component={Test}/>
+
         </Routes>
 
       </BrowserRouter>

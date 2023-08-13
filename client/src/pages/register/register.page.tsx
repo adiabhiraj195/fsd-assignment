@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import TextField from '../../component/atoms/text-field';
+import TextField from '../../component/atoms/text-field/text-field';
 import AuthService from '../../service/auth-service';
 import validator from "validator";
 import { useNavigate } from "react-router-dom";
+import Button from '../../component/atoms/button/sm-button';
 
 const Register = () => {
     const [fullName, setFullName] = useState<string>("");
@@ -25,7 +26,7 @@ const Register = () => {
         return isValid;
     }
 
-    const registerUser = (e:any) => {
+    const registerUser = (e: any) => {
         e.preventDefault();
         if (!validateData()) {
             return;
@@ -61,24 +62,28 @@ const Register = () => {
         <div className='register-page'>
             <div className='auth-container'>
                 <TextField
+                    id='fullName-register'
                     value={fullName}
                     placeholder='Full Name'
                     type='text'
                     onInput={handleOnInputName}
                 />
                 <TextField
+                    id='email-register'
                     value={email}
                     placeholder='Email'
                     type='email'
                     onInput={handleOnInputEmail}
                 />
                 <TextField
+                    id='passowrd-register'
                     value={password1}
                     placeholder='Password'
                     type='password'
                     onInput={handleOnInputPassword1}
                 />
                 <TextField
+                    id='confirm-password-register'
                     value={password2}
                     placeholder='Confirm Password'
                     type='password'
@@ -86,6 +91,7 @@ const Register = () => {
                 />
 
                 <button onClick={registerUser}>Register</button>
+                <Button btnName='Upload Photo' />
             </div>
         </div>
     )

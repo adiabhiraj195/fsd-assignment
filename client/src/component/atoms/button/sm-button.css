@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500&family=Lato:wght@100;300;400;700;900&family=Outfit:wght@100;200;300;400;500;600;700;800&family=Ubuntu:wght@300;400;700&display=swap');
+
+.button-wrap {
+    width: fit-content;
+    height: fit-content;
+    /* background-color: yellow; */
+}
+
+.sm-btn {
+    width: Hug (82.44px);
+    height: Hug (19.89px);
+    top: 60.4444580078125px;
+    left: 233.7777862548828px;
+    padding: 4.44444465637207px 14.222222328186035px 4.44444465637207px 14.222222328186035px;
+    border-radius: 88.8888931274414px;
+    gap: 8.88888931274414px;
+    background: #F0EFFA;
+    border: none;
+    font-family: Outfit;  
+    transition: 0.5s;
+}
+
+.sm-btn:hover{
+    background: #d2d1db;
+    cursor: pointer;
+
+}
