@@ -28,6 +28,24 @@ class UserValidator {
                 return true;
             })
     ];
+
+    login = [
+        body("email")
+            .isEmail()
+            .normalizeEmail()
+            .withMessage("Enter a valid Email"),
+        body("email")
+            .custom(async (value) => {
+                const user = await userService.findUserByEmail(value);
+                if (!user) {
+                    throw new Error("User not found");
+                };
+                return true;
+            }),
+        body("password")
+            .exists()
+            .withMessage('Must provide a password.'),
+    ]
 }
 
 const userValidator = new UserValidator();

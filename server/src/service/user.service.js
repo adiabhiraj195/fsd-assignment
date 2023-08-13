@@ -1,11 +1,11 @@
-const { genSalt, hash } = require("bcrypt");
+const { genSalt, hash, compare } = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../db/modle/user.mongo");
 
 class UserService {
     createUser = async ({ fullName, email, password }) => {
         const salt = await genSalt();
-        console.log(password)
+        // console.log(password)
         const hashPassword = await hash(password, salt);
         const verficationToken = jwt.sign({ email }, process.env.VERIFY_EMAIL_SECRET);
 
@@ -20,6 +20,31 @@ class UserService {
 
     findUserByEmail = async (email) => {
         return await User.findOne({ email: email });
+        //can add excluding extra data from the server
+    };
+
+    checkPassword = async (password, encryptPassword) => {
+        return await compare(password, encryptPassword);
+    };
+
+    loginResponse = async (user) => {
+        const requestUser = await this.getRequestUser({ user });
+
+        const accessToken = jwt.sign({ requestUser }, process.env.ACCESS_TOKEN_SECRET);
+
+        //todo add expireIn to the token 
+        //todo- add refresh token
+
+        return { accessToken };
+    }
+
+    getRequestUser = (user) => {
+        if (user instanceof User) {
+            return {
+                email: user.email
+            }
+        }
+        return user;
     }
 }
 
