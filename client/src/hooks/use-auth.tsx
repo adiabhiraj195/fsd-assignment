@@ -24,12 +24,15 @@ const useAuth = () => {
 
     const login = (accessToken: string) => {
         const { fullName, email } = jwt_decode<Token>(accessToken);
+        // console.log("useAuth login funcion")
+        // console.log(accessToken," useAuth login funcion")
         setFullName(fullName);
         setEmail(email);
         setIsAuthenticated(true);
         setLocalToken(accessToken);
         setAccessToken(accessToken);
     }
+    // console.log(accessToken, "useAuth")
 
     const destroyAuth = () => {
         setAccessToken(null);

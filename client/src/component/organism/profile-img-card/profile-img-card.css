@@ -1,0 +1,6 @@
+.profile-img-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 254px;
+}

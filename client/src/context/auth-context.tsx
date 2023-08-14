@@ -33,6 +33,7 @@ export const AuthProvider = ({ children }: AuthProviderInterface) => {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(defaultValue.isAuthenticated);
     const [fullName, setFullName] = useState<string | null>(defaultValue.fullName);
     const [email, setEmail] = useState<string | null>(defaultValue.email);
+    console.log(accessToken)
 
     return (
         <AuthContext.Provider

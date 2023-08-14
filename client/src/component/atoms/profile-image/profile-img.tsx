@@ -6,10 +6,7 @@ const ProfileImage = ()=> {
 
   return (
     <div className='profile-img-container'>
-        <div className='profile-img-wrap'>
             <img src=''></img>
-        </div>
-
     </div>
   )
 }

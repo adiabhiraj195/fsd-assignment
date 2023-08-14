@@ -30,7 +30,7 @@ class UserService {
     loginResponse = async (user) => {
         const requestUser = await this.getRequestUser({ user });
 
-        const accessToken = jwt.sign({ requestUser }, process.env.ACCESS_TOKEN_SECRET);
+        const accessToken = jwt.sign({ requestUser }, process.env.ACCESS_TOKEN_SECRET, { });
 
         //todo add expireIn to the token 
         //todo- add refresh token

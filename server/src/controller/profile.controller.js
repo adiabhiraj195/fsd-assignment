@@ -21,7 +21,19 @@ class ProfileController {
         // }
         return res.sendStatus(200);
 
+    };
+
+    fetchAllData= async(req, res)=>{
+        const err = validationResult(req);
+        if(!err.isEmpty()) return res.status(400).json(err);
+
+        const { email } = req.user;
+        console.log(email);
+        const User = await userService.findUserByEmail(email);
+
+        return res.status(200).json(User);
     }
+
 }
 
 const profileController = new ProfileController();
