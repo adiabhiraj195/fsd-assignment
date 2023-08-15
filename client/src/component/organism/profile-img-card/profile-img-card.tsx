@@ -7,7 +7,7 @@ const ProfileImageSection = () => {
     return (
         <div className='profile-img-wrap'>
             <ProfileImage />
-            <Button btnName='Upload Photo' /> 
+            {/* <Button btnName='Upload Photo' />  */}
         </div>
     )
 }

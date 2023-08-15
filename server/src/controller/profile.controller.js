@@ -22,6 +22,20 @@ class ProfileController {
         return res.sendStatus(200);
 
     };
+    updateFullName = async(req,res)=>{
+        const err = validationResult(req);
+        if(!err.isEmpty()) return res.status(400).json(err);
+
+        const { email } = req.user;
+        const { fullName } = req.body;
+
+        const User = await userService.findUserByEmail(email);
+        if(fullName!==null && fullName!== undefined){
+            User.fullName = fullName;
+        };
+        User.save();
+        return res.sendStatus(200);
+    }
 
     fetchAllData= async(req, res)=>{
         const err = validationResult(req);

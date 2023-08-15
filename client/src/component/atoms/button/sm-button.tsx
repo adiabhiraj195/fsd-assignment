@@ -3,18 +3,18 @@ import "./sm-button.css";
 
 interface ButtonInterface {
     btnName: string;
-    onClick?: Function;
+    onclick: Function;
 }
 
 const Button = ({
     btnName,
-    onClick
+    onclick
 }: ButtonInterface) => {
     return (
         <div className='button-wrap'>
             <button
                 className='sm-btn'
-                onClick={()=>onClick}
+                onClick={() => onclick()}
             >
                 {btnName}
             </button>

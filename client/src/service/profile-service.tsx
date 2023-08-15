@@ -9,6 +9,14 @@ const ProfileService = {
         })
     },
 
+    nameUpdate : (accessToken: string, payload:{
+        fullName: string,
+    })=>{
+        return API.post("/profile/fullName", payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+    },
+
     fetchAllData: (accessToken: string)=>{
         return API.get("/profile/alldata", {
             headers: { Authorization: `Bearer ${accessToken}`}

@@ -91,7 +91,7 @@ const Register = () => {
                 />
 
                 <button onClick={registerUser}>Register</button>
-                <Button btnName='Upload Photo' />
+                {/* <Button btnName='Upload Photo' /> */}
             </div>
         </div>
     )

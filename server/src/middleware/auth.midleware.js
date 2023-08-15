@@ -13,9 +13,9 @@ const authenticate = (req, res, next) => {
         token,
         process.env.ACCESS_TOKEN_SECRET,
         (err, decoded) => {
-            // console.log(err)
+            console.log(err)
             if (err) return res.sendStatus(403);
-            // console.log("after error appear")
+            console.log("after error appear")
             try {
                 const { fullName, email } = decoded.requestUser.user;
                 // console.log(email);

@@ -13,7 +13,7 @@ const AboutCard = ({
         <div className='about-wrap'>
             <div className='about-heading'>
                 <h3>About <span>{userFirstName}</span></h3>
-                <Button btnName='Edit' />
+                {/* <Button btnName='Edit' /> */}
             </div>
             <div className='about-para-wrap'>
                 <p className='about-para'>
