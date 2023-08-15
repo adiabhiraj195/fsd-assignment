@@ -22,7 +22,11 @@ const ProfileDetailCard = ({
     fullNamePopup,
     setFullNamePopup,
     editPopupToggle,
-    setEditPopupToggle
+    setEditPopupToggle,
+    emailPopup,
+    setEmailPopup,
+    phonePopup,
+    setPhonePopup,
   } = useContext(ProfileContext);
   console.log(userAllData);
 
@@ -36,16 +40,23 @@ const ProfileDetailCard = ({
   // }
 
   const handleFullNamePopup = () => {
-    // e.preventDefault();
     setEditPopupToggle(!editPopupToggle);
     setFullNamePopup(!fullNamePopup);
-    console.log(editPopupToggle, "editPopup", fullNamePopup, "fullNamePopup")
+    // console.log(editPopupToggle, "editPopup", fullNamePopup, "fullNamePopup")
+  }
+  const handleEmailPopup = () => {
+    setEditPopupToggle(!editPopupToggle);
+    setEmailPopup(!emailPopup);
+  }
+  const handlePhonePopup = () => {
+    setEditPopupToggle(!editPopupToggle);
+    setPhonePopup(!phonePopup);
   }
   return (
     <div className='profile-detail-wrap'>
       <SubProfileCard label='Your Name' detail={name} toggleEdit={handleFullNamePopup} />
-      {/* <SubProfileCard label='Email' detail={email} />
-      <SubProfileCard label='Phone Number' detail={phone} /> */}
+      <SubProfileCard label='Email' detail={email} toggleEdit={handleEmailPopup} />
+      <SubProfileCard label='Phone Number' detail={phone} toggleEdit={handlePhonePopup} />
     </div>
   )
 }

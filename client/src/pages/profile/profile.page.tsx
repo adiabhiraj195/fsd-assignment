@@ -27,7 +27,7 @@ const ProfilePage = () => {
             userData = result.data;
             setFullName(result.data.fullName);
             setEmail(result.data.email);
-            setPhone(result.data.pNumber);
+            setPhone(result.data.phone);
             // console.log(userData.fullName);
 
             //todo - assign data to profileContext

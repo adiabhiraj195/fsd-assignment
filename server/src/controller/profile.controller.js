@@ -12,7 +12,7 @@ class ProfileController {
         // console.log(pNumber);
         const User = await userService.findUserByEmail(email);
         // console.log(User);
-        if(pNumber!==null && pNumber!== undefined){
+        if (pNumber !== null && pNumber !== undefined) {
             User.phone = Number(pNumber);
         }
         User.save();
@@ -22,24 +22,40 @@ class ProfileController {
         return res.sendStatus(200);
 
     };
-    updateFullName = async(req,res)=>{
+
+    updateFullName = async (req, res) => {
         const err = validationResult(req);
-        if(!err.isEmpty()) return res.status(400).json(err);
+        if (!err.isEmpty()) return res.status(400).json(err);
 
         const { email } = req.user;
         const { fullName } = req.body;
 
         const User = await userService.findUserByEmail(email);
-        if(fullName!==null && fullName!== undefined){
+        if (fullName !== null && fullName !== undefined) {
             User.fullName = fullName;
+        };
+        User.save();
+        return res.sendStatus(200);
+    };
+
+    updateEmail = async (req, res) => {
+        const err = validationResult(req);
+        if (!err.isEmpty()) return res.status(400).json(err);
+
+        const { email } = req.user;
+        const { newEmail } = req.body;
+
+        const User = await userService.findUserByEmail(email);
+        if (newEmail !== null && newEmail !== undefined) {
+            User.email = newEmail;
         };
         User.save();
         return res.sendStatus(200);
     }
 
-    fetchAllData= async(req, res)=>{
+    fetchAllData = async (req, res) => {
         const err = validationResult(req);
-        if(!err.isEmpty()) return res.status(400).json(err);
+        if (!err.isEmpty()) return res.status(400).json(err);
 
         const { email } = req.user;
         console.log(email);

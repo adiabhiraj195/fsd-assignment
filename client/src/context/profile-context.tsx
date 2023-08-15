@@ -7,6 +7,10 @@ interface ProfileContextInterface {
     setFullNamePopup: Dispatch<SetStateAction<boolean>>;
     editPopupToggle: boolean;
     setEditPopupToggle: Dispatch<SetStateAction<boolean>>;
+    emailPopup:boolean;
+    setEmailPopup: Dispatch<SetStateAction<boolean>>;
+    phonePopup: boolean;
+    setPhonePopup: Dispatch<SetStateAction<boolean>>;
 }
 
 const defaultValue = {
@@ -16,6 +20,10 @@ const defaultValue = {
     setFullNamePopup: () => { },
     editPopupToggle: false,
     setEditPopupToggle: ()=>{},
+    emailPopup: false,
+    setEmailPopup: ()=>{},
+    phonePopup: false,
+    setPhonePopup: ()=>{},
 }
 
 export const ProfileContext = createContext<ProfileContextInterface>(defaultValue);
@@ -26,8 +34,10 @@ interface ProfileProviderInterface {
 
 export const ProfileProvider = ({ children }: ProfileProviderInterface) => {
     const [userAllData, setUserAllData] = useState<string | null>(defaultValue.userAllData);
-    const [fullNamePopup, setFullNamePopup] = useState<boolean>(defaultValue.fullNamePopup);
     const [editPopupToggle, setEditPopupToggle] = useState<boolean>(defaultValue.editPopupToggle);
+    const [fullNamePopup, setFullNamePopup] = useState<boolean>(defaultValue.fullNamePopup);
+    const [emailPopup, setEmailPopup] = useState<boolean>(defaultValue.emailPopup);
+    const [phonePopup, setPhonePopup] = useState<boolean>(defaultValue.phonePopup);
 
     return (
         <ProfileContext.Provider
@@ -38,6 +48,10 @@ export const ProfileProvider = ({ children }: ProfileProviderInterface) => {
                 setFullNamePopup,
                 editPopupToggle,
                 setEditPopupToggle,
+                emailPopup,
+                setEmailPopup,
+                phonePopup,
+                setPhonePopup,
             }
             }
         >

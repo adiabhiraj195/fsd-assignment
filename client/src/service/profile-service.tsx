@@ -17,6 +17,21 @@ const ProfileService = {
         })
     },
 
+    emailUpdate : (accessToken: string, payload:{
+        newEmail: string,
+    })=>{
+        return API.post("/profile/email", payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+    },
+    phoneUpdate : (accessToken: string, payload:{
+        pNumber: string,
+    })=>{
+        return API.post("/profile/phone", payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+    },
+
     fetchAllData: (accessToken: string)=>{
         return API.get("/profile/alldata", {
             headers: { Authorization: `Bearer ${accessToken}`}
