@@ -4,7 +4,7 @@ import "./text-field.css";
 interface TextFieldProps {
     id: string;
     value: string | number;
-    placeholder: string;
+    placeholder?: string;
     type: "text" | "password" | "email";
     onInput: Function;
     label?: string;
@@ -18,7 +18,6 @@ const TextField = ({
     placeholder,
     onInput,
     label,
-
 }: TextFieldProps) => {
 
 
