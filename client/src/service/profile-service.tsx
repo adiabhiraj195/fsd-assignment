@@ -31,6 +31,39 @@ const ProfileService = {
             headers: { Authorization: `Bearer ${accessToken}` }
         })
     },
+    aboutUpdate : (accessToken: string, payload:{
+        about: string,
+    })=>{
+        return API.post("/profile/about", payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+    },
+    skillUpdate : (accessToken: string, payload:{
+    newSkill: string,
+    })=>{
+        return API.post("/profile/addskill", payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+    },
+    certificateUpdate : (accessToken: string, payload:{
+    title: string,
+    organisation: string
+    })=>{
+        return API.post("/profile/certificate", payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+    },
+    educationUpdate : (accessToken: string, payload:{
+    organisation: string,
+    degree: string,
+    from:string,
+    to:string,
+    about: string
+    })=>{
+        return API.post("/profile/education", payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+    },
 
     fetchAllData: (accessToken: string)=>{
         return API.get("/profile/alldata", {

@@ -4,11 +4,8 @@ const certificateSchema = mongoose.Schema({
     title: {
         type: String,
     },
-    organisaion:{
+    organisation:{
         type: String,
-    },
-    logo:{
-        type:String,
     }
 });
 

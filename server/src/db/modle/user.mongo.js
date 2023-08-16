@@ -23,11 +23,18 @@ const userSchema = mongoose.Schema({
     phone: { type: Number },
     about: { type: String },
     skills: { type: Array },
-    certificate: [certificateSchema],
+    certificate: {
+        title: {
+            type: String,
+        },
+        organisation: {
+            type: String,
+        }
+    },
     experience: [experienceSchema],
     education: {
-        from: Number,
-        to: Number,
+        from: String,
+        to: String,
         organisation: String,
         degree: String,
         about: String

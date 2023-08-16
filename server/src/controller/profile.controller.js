@@ -51,7 +51,76 @@ class ProfileController {
         };
         User.save();
         return res.sendStatus(200);
-    }
+    };
+
+    updateAbout = async (req, res) => {
+        const err = validationResult(req);
+        if (!err.isEmpty()) return res.status(400).json(err);
+
+        const { email } = req.user;
+        const { about } = req.body;
+
+        const User = await userService.findUserByEmail(email);
+        if (about !== null && about !== undefined) {
+            User.about = about;
+        };
+        User.save();
+        return res.sendStatus(200);
+    };
+
+    updateSkills = async (req, res) => {
+        const err = validationResult(req);
+        if (!err.isEmpty()) return res.status(400).json(err);
+
+        const { email } = req.user;
+        const { newSkill } = req.body;
+
+        const User = await userService.findUserByEmail(email);
+        if (newSkill !== null && newSkill !== undefined) {
+            User.skills.push(newSkill);
+        };
+        User.save();
+        return res.sendStatus(200);
+    };
+    updateCertificate = async (req, res) => {
+        const err = validationResult(req);
+        if (!err.isEmpty()) return res.status(400).json(err);
+
+        const { email } = req.user;
+        const { title, organisation } = req.body;
+
+        const User = await userService.findUserByEmail(email);
+        if (title !== null && title !== undefined) {
+            User.certificate.title = title;
+            User.certificate.organisation = organisation
+        };
+        User.save();
+        return res.sendStatus(200);
+    };
+    updateEducation = async (req, res) => {
+        const err = validationResult(req);
+        if (!err.isEmpty()) return res.status(400).json(err);
+
+        const { email } = req.user;
+        const { 
+            organisation,
+            degree,
+            from,
+            to,
+            about        
+        } = req.body;
+
+        const User = await userService.findUserByEmail(email);
+        if (organisation !== null && organisation !== undefined) {
+            User.education.degree= degree;
+            User.education.organisation = organisation;
+            User.education.from = from;
+            User.education.to = to;
+            User.education.about = about;
+        };
+        User.save();
+        return res.sendStatus(200);
+    };
 
     fetchAllData = async (req, res) => {
         const err = validationResult(req);

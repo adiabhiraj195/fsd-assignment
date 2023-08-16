@@ -18,7 +18,7 @@ const ProfileDetailCard = ({
 }: ProfileDetailPropsInterface) => {
   // const { accessToken } = useContext(AuthContext);
   const {
-    userAllData,
+    //   userAllData,
     fullNamePopup,
     setFullNamePopup,
     editPopupToggle,
@@ -28,7 +28,7 @@ const ProfileDetailCard = ({
     phonePopup,
     setPhonePopup,
   } = useContext(ProfileContext);
-  console.log(userAllData);
+  // console.log(userAllData);
 
   // const getProfileDetails = async () => {
   //   try {
