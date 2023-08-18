@@ -1,49 +1,46 @@
-.about-wrap {
-    border: 1px solid #00000026;
-    border-radius: 4px;
-    width: 296px;
-    height: 110px;
+.skill-card-wrap {
     padding: 18px 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 1.7777777910232544px 1.7777777910232544px 0px #0000001A;
     background-color: #ebebeb26;
+    border: 1px solid #00000026;
+    border-radius: 4px;
+    width: 296px;
+    height: 110px;
 }
 
-.about-para {
-    font-family: Outfit;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 13px;
-    letter-spacing: 0.01em;
-    text-align: left;
-
-}
-.about-heading{
+.skill-heading-wrap {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
+    align-content: center;
 }
 
-.about-heading h3 {
+.skill-heading {
     font-family: Outfit;
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0em;
     text-align: left;
-
-    
 }
-.about-heading h3 span {
-    font-family: Poppins;
-    font-size: 14px;
+
+.skill {
+    font-family: Outfit;
+    font-size: 11px;
     font-weight: 500;
-    line-height: 21px;
+    line-height: 13px;
     letter-spacing: 0em;
     text-align: left;
-    color: #413B89;
+    display: block;
+    margin: 4px 0px;
+    /* margin-right: 12px; */
 
+}
+
+.skill-content-wrap{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }

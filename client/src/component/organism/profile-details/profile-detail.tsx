@@ -27,31 +27,25 @@ const ProfileDetailCard = ({
     setEmailPopup,
     phonePopup,
     setPhonePopup,
+    // setEditPagePopup
   } = useContext(ProfileContext);
-  // console.log(userAllData);
-
-  // const getProfileDetails = async () => {
-  //   try {
-  //     if (accessToken == null) return;
-  //     // const result = await ProfileService.
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
+  
   const handleFullNamePopup = () => {
     setEditPopupToggle(!editPopupToggle);
+    // setEditPagePopup("name");
     setFullNamePopup(!fullNamePopup);
-    // console.log(editPopupToggle, "editPopup", fullNamePopup, "fullNamePopup")
   }
+
   const handleEmailPopup = () => {
     setEditPopupToggle(!editPopupToggle);
     setEmailPopup(!emailPopup);
   }
+
   const handlePhonePopup = () => {
     setEditPopupToggle(!editPopupToggle);
     setPhonePopup(!phonePopup);
   }
+
   return (
     <div className='profile-detail-wrap'>
       <SubProfileCard label='Your Name' detail={name} toggleEdit={handleFullNamePopup} />

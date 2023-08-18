@@ -7,25 +7,15 @@ import ProfileService from '../../service/profile-service';
 import EditPopup from '../../component/organism/edit-popup/edit-popup';
 import AboutCard from '../../component/organism/about-card/about-card';
 import SkillCard from '../../component/organism/skills-card/skill-card';
-import CertificateCard from '../../component/organism/certificate-card/cerificate-card';
+import CertificateCard from '../../component/organism/certificate-card/certificate-card';
 import EducationCard from '../../component/organism/education-card/education-card';
 
 const ProfilePage = () => {
     const {
-        // userAllData,
-        // setUserAllData,
+        userAllData,
+        setUserAllData,
         editPopupToggle,
-        skills,
-        setSkills,
-        educationData,
-        setEducationData,
     } = useContext(ProfileContext);
-    const [fullName, setFullName] = useState<string>("error");
-    const [email, setEmail] = useState<string>("error");
-    const [phone, setPhone] = useState<number | string>("error");
-    const [about, setAbout] = useState<string>("error");
-    const [certificatesTitle, setCertificateTitle] = useState("error");
-    const [certificatesOrganisation, setCertificateOrganisation] = useState("error");
 
     // const { accessToken } = useContext(AuthContext);
     const accessToken = localStorage.getItem("Token");
@@ -38,27 +28,26 @@ const ProfilePage = () => {
             if (accessToken == null) return;
 
             const result = await ProfileService.fetchAllData(accessToken);
-            // setUserAllData({
-            //     fullName: result.data.fullName,
-            //     email: result.data.email,
-            // });
-            // userData = result.data;
-            setFullName(result.data.fullName);
-            setEmail(result.data.email);
-            setPhone(result.data.phone);
-            setAbout(result.data.about);
-            setSkills(result.data.skills);
-            setCertificateTitle(result.data.certificate.title);
-            setCertificateOrganisation(result.data.certificate.organisation);
-            setEducationData({
-                from: result.data.education.from,
-                to: result.data.education.to,
-                about: result.data.education.about,
-                organisation: result.data.education.organisation,
-                degree: result.data.education.degree
-            })
+            setUserAllData({
+                fullName: result.data.fullName,
+                email: result.data.email,
+                phone: result.data.phone,
+                about: result.data.about,
+                skills: result.data.skills,
+                certificate: {
+                    title: result.data.certificate.title,
+                    organisation:result.data.certificate.organisation,
+                },
+                education:{
+                    from: result.data.education.from,
+                    to: result.data.education.to,
+                    organisation: result.data.education.organisation,
+                    degree: result.data.education.degree,
+                    about: result.data.education.about,
+                }
+            });
+            console.log(userAllData);
 
-            //todo - assign data to profileContext
         } catch (error) {
             console.log(error);
         }
@@ -71,10 +60,10 @@ const ProfilePage = () => {
     return (
         <div>
             <ProfileImageSection />
-            <ProfileDetailCard name={fullName} email={email} phone={phone} />
-            <AboutCard userFirstName={fullName.substring(0, fullName.indexOf(' '))} about={about} />
-            <SkillCard skills={skills} />
-            <CertificateCard title={certificatesTitle} organisation={certificatesOrganisation} />
+            <ProfileDetailCard name={userAllData.fullName} email={userAllData.email} phone={userAllData.phone} />
+            <AboutCard userFirstName={userAllData.fullName.substring(0, userAllData.fullName.indexOf(' '))} about={userAllData.about} />
+            <SkillCard skills={userAllData.skills} />
+            <CertificateCard title={userAllData.certificate.title} organisation={userAllData.certificate.organisation} />
             <EducationCard/>
             {
                 editPopupToggle && <EditPopup />

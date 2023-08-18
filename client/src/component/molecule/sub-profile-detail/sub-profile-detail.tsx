@@ -22,11 +22,11 @@ const SubProfileCard = ({
     // }
     return (
         <div className='profile-sub-detail-wrap'>
-            <p className='detail-label'>{label}</p>
             <div className='sub-data-wrap'>
+                <p className='detail-label'>{label}</p>
                 <h3 className='profile-data'>{detail}</h3>
-                <Button btnName='Edit' onclick={toggleEdit} />
             </div>
+            <Button btnName='Edit' onclick={toggleEdit} />
         </div>
     )
 }

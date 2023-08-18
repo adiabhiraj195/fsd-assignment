@@ -1,23 +1,42 @@
 import { createContext, useState, Dispatch, SetStateAction } from "react";
 
 interface ProfileContextInterface {
-    // userAllData: {
-    //     about: string,
-    //     certificate: {
-    //         title: string,
-    //         organisation: string,
-    //     },
-    //     fullName:string,
-    //     email: string,
-    //     password: string,
-    //     phone: number |string,
-    //     skills: Array<string>,
-    //     verificaionToken: string,
-    //     __v: number,
-    //     _id: string,
-    //     experience: Array<object>
-    // } | null;
-    // setUserAllData: Dispatch<SetStateAction<any>>;
+    userAllData: {
+        fullName: string;
+        email: string;
+        phone: string;
+        about: string;
+        skills: string[];
+        certificate: {
+            title: string;
+            organisation: string;
+        };
+        education: {
+            from: string;
+            to: string;
+            organisation: string;
+            degree: string;
+            about: string;
+        };
+    }
+    setUserAllData: Dispatch<SetStateAction<{
+        fullName: string;
+        email: string;
+        phone: string;
+        about: string;
+        skills: string[];
+        certificate: {
+            title: string;
+            organisation: string;
+        };
+        education: {
+            from: string;
+            to: string;
+            organisation: string;
+            degree: string;
+            about: string;
+        };
+    }>>;
     fullNamePopup: boolean;
     setFullNamePopup: Dispatch<SetStateAction<boolean>>;
     editPopupToggle: boolean;
@@ -32,32 +51,51 @@ interface ProfileContextInterface {
     setOldAbout: Dispatch<SetStateAction<string>>;
     skillPopup: boolean;
     setSkillPopup: Dispatch<SetStateAction<boolean>>;
-    skills: Array<string>;
-    setSkills: Dispatch<SetStateAction<string[]>>;
+    // skills: Array<string>;
+    // setSkills: Dispatch<SetStateAction<string[]>>;
     certificatePopup: boolean;
     setCertificatePopup: Dispatch<SetStateAction<boolean>>;
-    educationData: {
-        from: string,
-        to: string,
-        organisation: string,
-        degree: string,
-        about: string,
+    // educationData: {
+    //     from: string,
+    //     to: string,
+    //     organisation: string,
+    //     degree: string,
+    //     about: string,
 
-    };
-    setEducationData: Dispatch<SetStateAction<{
-        from: string;
-        to: string;
-        organisation: string;
-        degree: string;
-        about: string;
-    }>>;
+    // };
+    // setEducationData: Dispatch<SetStateAction<{
+    //     from: string;
+    //     to: string;
+    //     organisation: string;
+    //     degree: string;
+    //     about: string;
+    // }>>;
     educationPopup: boolean;
     setEducationPopup: Dispatch<SetStateAction<boolean>>;
+//     editPagePopup: "name" | "email" | "phone" | "about" | "skills" | "certificate" | "education" | "none";
+//     setEditPagePopup: Dispatch<SetStateAction<"name" | "email" | "phone" | "about" | "skills" | "certificate" | "education" | "none">>;
 }
 
 const defaultValue = {
-    // userAllData: null,
-    // setUserAllData: () => { },
+    userAllData: {
+        fullName: "",
+        email: "",
+        phone: "",
+        about: "",
+        skills: [""],
+        certificate: {
+            title: "",
+            organisation: ""
+        },
+        education: {
+            from: "",
+            to: "",
+            organisation: "",
+            degree: "",
+            about: "",
+        }
+    },
+    setUserAllData: () => { },
     fullNamePopup: false,
     setFullNamePopup: () => { },
     editPopupToggle: false,
@@ -72,21 +110,23 @@ const defaultValue = {
     setOldAbout: () => { },
     skillPopup: false,
     setSkillPopup: () => { },
-    skills: [],
-    setSkills: () => { },
+    // skills: [],
+    // setSkills: () => { },
     certificatePopup: false,
     setCertificatePopup: () => { },
-    educationData: {
-        from: "",
-        to: "",
-        organisation: "",
-        degree: "",
-        about: "",
+    // educationData: {
+    //     from: "",
+    //     to: "",
+    //     organisation: "",
+    //     degree: "",
+    //     about: "",
 
-    },
-    setEducationData: ()=>{ },
+    // },
+    // setEducationData: () => { },
     educationPopup: false,
-    setEducationPopup:()=>{},
+    setEducationPopup: () => { },
+    // editPagePopup: "none",
+    // setEditPagePopup: () => { },
 }
 
 export const ProfileContext = createContext<ProfileContextInterface>(defaultValue);
@@ -96,7 +136,7 @@ interface ProfileProviderInterface {
 };
 
 export const ProfileProvider = ({ children }: ProfileProviderInterface) => {
-    // const [userAllData, setUserAllData] = useState(defaultValue.userAllData);
+    const [userAllData, setUserAllData] = useState(defaultValue.userAllData);
     const [editPopupToggle, setEditPopupToggle] = useState<boolean>(defaultValue.editPopupToggle);
     const [fullNamePopup, setFullNamePopup] = useState<boolean>(defaultValue.fullNamePopup);
     const [emailPopup, setEmailPopup] = useState<boolean>(defaultValue.emailPopup);
@@ -104,16 +144,17 @@ export const ProfileProvider = ({ children }: ProfileProviderInterface) => {
     const [aboutPopup, setAboutPopup] = useState<boolean>(defaultValue.aboutPopup);
     const [oldAbout, setOldAbout] = useState<string>(defaultValue.oldAbout);
     const [skillPopup, setSkillPopup] = useState<boolean>(defaultValue.skillPopup);
-    const [skills, setSkills] = useState<Array<string>>(defaultValue.skills);
+    // const [skills, setSkills] = useState<Array<string>>(defaultValue.skills);
     const [certificatePopup, setCertificatePopup] = useState<boolean>(defaultValue.certificatePopup);
-    const [educationData, setEducationData] = useState(defaultValue.educationData);
+    // const [educationData, setEducationData] = useState(defaultValue.educationData);
     const [educationPopup, setEducationPopup] = useState<boolean>(defaultValue.educationPopup)
+    // const [editPagePopup, setEditPagePopup] = useState(defaultValue.editPagePopup);
 
     return (
         <ProfileContext.Provider
             value={{
-                // userAllData,
-                // setUserAllData,
+                userAllData,
+                setUserAllData,
                 fullNamePopup,
                 setFullNamePopup,
                 editPopupToggle,
@@ -128,14 +169,16 @@ export const ProfileProvider = ({ children }: ProfileProviderInterface) => {
                 setOldAbout,
                 skillPopup,
                 setSkillPopup,
-                skills,
-                setSkills,
+                // skills,
+                // setSkills,
                 certificatePopup,
                 setCertificatePopup,
-                educationData,
-                setEducationData,
+                // educationData,
+                // setEducationData,
                 educationPopup,
                 setEducationPopup,
+                // editPagePopup,
+                // setEditPagePopup,
             }
             }
         >

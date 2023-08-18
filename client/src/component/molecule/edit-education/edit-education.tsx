@@ -6,12 +6,12 @@ import { ProfileContext } from '../../../context/profile-context';
 import ProfileService from '../../../service/profile-service';
 
 const EditEducation =()=> {
-    const {educationData}= useContext(ProfileContext);
-    const [organisation, setOrganisation] = useState(educationData.organisation);
-    const [course, setCourse] = useState(educationData.degree);
-    const [from, setFrom] = useState(educationData.from);
-    const [to, setTo] = useState(educationData.to);
-    const [about, setAbout] = useState(educationData.about);
+    const {userAllData}= useContext(ProfileContext);
+    const [organisation, setOrganisation] = useState(userAllData.education.organisation);
+    const [course, setCourse] = useState(userAllData.education.degree);
+    const [from, setFrom] = useState(userAllData.education.from);
+    const [to, setTo] = useState(userAllData.education.to);
+    const [about, setAbout] = useState(userAllData.education.about);
 
     const accessToken = localStorage.getItem("Token");
 

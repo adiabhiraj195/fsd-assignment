@@ -1,0 +1,71 @@
+.education-card-wrap {
+    width: 250px;
+    height: 124px;
+
+    /* border-radius: 8.920636177062988px
+border: 0.8438439965248108px */
+
+}
+
+.education-heading-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.education-heading-wrap h2 {
+    font-family: Outfit;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.education-content-wrap {
+    border: 1px solid #CECECE;
+    border-radius: 4px;
+    padding: 10px 13px;
+}
+
+.education-organisation {
+    font-family: Outfit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #413B89;
+    margin-bottom: 8px;
+
+}
+
+.education-timestamp-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+}
+
+.timestamp,
+.education-degree {
+    font-family: Outfit;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 13px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #222222E5;
+
+}
+
+.education-about {
+    font-family: Outfit;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #49454FCC;
+}

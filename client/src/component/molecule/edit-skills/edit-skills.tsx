@@ -5,7 +5,7 @@ import ProfileService from '../../../service/profile-service';
 import { ProfileContext } from '../../../context/profile-context';
 
 const EditSkills = () => {
-    const { skills } = useContext(ProfileContext);
+    const { userAllData } = useContext(ProfileContext);
     const [newSkill, setNewSkill] = useState("");
     const accessToken = localStorage.getItem("Token");
 
@@ -29,7 +29,7 @@ const EditSkills = () => {
     }
     return (
         <div>
-            {skills?.map((skill) => {
+            {userAllData.skills?.map((skill) => {
                 return (
                     <>
                         <h3>{skill}</h3>

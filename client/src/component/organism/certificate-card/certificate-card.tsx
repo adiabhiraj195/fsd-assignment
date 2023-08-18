@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import Button from '../../atoms/button/sm-button';
 import { ProfileContext } from '../../../context/profile-context';
+import "./certificate-card.css";
 
 interface CertificateCardInterface {
     title: string;
@@ -19,12 +20,12 @@ const CertificateCard = ({
         setCertificatePopup(!certificatePopup);
     }
     return (
-        <div>
-            <div>
-                <h2>Cerificates</h2>
+        <div className='certificate-card-wrap'>
+            <div className='certificate-heading-wrap'>
+                <h2 className='certificate-heading'>Cerificates</h2>
                 <Button btnName='Edit' onclick={handleEdit} />
             </div>
-            <div>
+            <div className='certificate-wrap'>
                 <h2>{title}</h2>
                 <p>{organisation}</p>
             </div>

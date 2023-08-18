@@ -1,11 +1,16 @@
 .profile-detail-wrap {
     width: 296px;
     height: 168.89px;
-    top: 136.88890075683594px;
-    left: 26.66668701171875px;
-    border-radius: 4.44444465637207px;
-    border: 0.8888888955116272px;
-    padding: 26px 24px;
+    /* top: 136.88890075683594px;
+    left: 26.66668701171875px; */
+    border-radius: 4px;
+    border: 1px solid #00000026;
+    padding: 18px 14px;
     background-color: lightblue;
-
+    align-items: center;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    box-shadow: 0px 1.7777777910232544px 1.7777777910232544px 0px #0000001A;
+    background-color: #ebebeb26;
 }
