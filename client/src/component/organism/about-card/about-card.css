@@ -1,8 +1,8 @@
 .about-wrap {
     border: 1px solid #00000026;
     border-radius: 4px;
-    width: 296px;
-    height: 110px;
+    width: 426px;
+    height: 123px;
     padding: 18px 14px;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
 
 .about-para {
     font-family: Outfit;
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 13px;
     letter-spacing: 0.01em;
@@ -29,7 +29,7 @@
 
 .about-heading h3 {
     font-family: Outfit;
-    font-size: 14px;
+    font-size: 19px;
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0em;
@@ -39,7 +39,7 @@
 }
 .about-heading h3 span {
     font-family: Poppins;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 21px;
     letter-spacing: 0em;

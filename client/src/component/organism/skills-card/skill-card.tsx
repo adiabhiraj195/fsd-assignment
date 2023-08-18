@@ -22,7 +22,7 @@ const SkillCard = ({ skills }: SkillCardInterface) => {
         setEditPagePopup("skills");
     }
     return (
-        <div className='skill-card-wrap'>
+        <div className='skill-card-wrap profile-element'>
             <div className='skill-heading-wrap'>
                 <h2 className='skill-heading'>Skills</h2>
                 <Button btnName='Edit' onclick={handleEdit} />

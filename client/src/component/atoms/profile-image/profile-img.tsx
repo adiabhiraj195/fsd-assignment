@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import profile from "../../../assets/image/profile.png";
+import "./profile-img.css";
 
 const ProfileImage = ()=> {
 
@@ -6,7 +8,7 @@ const ProfileImage = ()=> {
 
   return (
     <div className='profile-img-container'>
-            <img src=''></img>
+            <img src={profile}></img>
     </div>
   )
 }

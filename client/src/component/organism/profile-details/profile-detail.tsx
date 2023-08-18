@@ -48,7 +48,7 @@ const ProfileDetailCard = ({
   }
 
   return (
-    <div className='profile-detail-wrap'>
+    <div className='profile-detail-wrap profile-element'>
       <SubProfileCard label='Your Name' detail={name} toggleEdit={handleFullNamePopup} />
       <SubProfileCard label='Email' detail={email} toggleEdit={handleEmailPopup} />
       <SubProfileCard label='Phone Number' detail={phone} toggleEdit={handlePhonePopup} />

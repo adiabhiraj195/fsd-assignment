@@ -1,0 +1,55 @@
+.side-bar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* position: relative; */
+    height: 100%;
+    /* left:0; */
+    /* bottom: 0; */
+    background-color: lightpink;
+    width: 240px;
+}
+
+.side-bar-top {
+    margin-top: 20px;
+}
+
+.select-btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.profile-btn,
+.connections-btn {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: 1px solid #413B89;
+    border-radius: 9px;
+    width: 173px;
+    padding: 10px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #222222E5;
+    margin: 20px 0px;
+    cursor: pointer;
+    transform: 0.4s;
+}
+.logout-btn:hover{
+    color: black;
+}

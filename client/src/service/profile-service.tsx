@@ -9,65 +9,65 @@ const ProfileService = {
         })
     },
 
-    nameUpdate : (accessToken: string, payload:{
+    nameUpdate: (accessToken: string, payload: {
         fullName: string,
-    })=>{
+    }) => {
         return API.post("/profile/fullName", payload, {
             headers: { Authorization: `Bearer ${accessToken}` }
         })
     },
 
-    emailUpdate : (accessToken: string, payload:{
+    emailUpdate: (accessToken: string, payload: {
         newEmail: string,
-    })=>{
+    }) => {
         return API.post("/profile/email", payload, {
             headers: { Authorization: `Bearer ${accessToken}` }
         })
     },
-    phoneUpdate : (accessToken: string, payload:{
+    phoneUpdate: (accessToken: string, payload: {
         pNumber: string,
-    })=>{
+    }) => {
         return API.post("/profile/phone", payload, {
             headers: { Authorization: `Bearer ${accessToken}` }
         })
     },
-    aboutUpdate : (accessToken: string, payload:{
+    aboutUpdate: (accessToken: string, payload: {
         about: string,
-    })=>{
+    }) => {
         return API.post("/profile/about", payload, {
             headers: { Authorization: `Bearer ${accessToken}` }
         })
     },
-    skillUpdate : (accessToken: string, payload:{
-    newSkill: string,
-    })=>{
+    skillUpdate: (accessToken: string, payload: {
+        newSkill: string,
+    }) => {
         return API.post("/profile/addskill", payload, {
             headers: { Authorization: `Bearer ${accessToken}` }
         })
     },
-    certificateUpdate : (accessToken: string, payload:{
-    title: string,
-    organisation: string
-    })=>{
+    certificateUpdate: (accessToken: string, payload: {
+        title: string,
+        organisation: string
+    }) => {
         return API.post("/profile/certificate", payload, {
             headers: { Authorization: `Bearer ${accessToken}` }
         })
     },
-    educationUpdate : (accessToken: string, payload:{
-    organisation: string,
-    degree: string,
-    from:string,
-    to:string,
-    about: string
-    })=>{
+    educationUpdate: (accessToken: string, payload: {
+        organisation: string,
+        degree: string,
+        from: string,
+        to: string,
+        about: string
+    }) => {
         return API.post("/profile/education", payload, {
             headers: { Authorization: `Bearer ${accessToken}` }
         })
     },
 
-    fetchAllData: (accessToken: string)=>{
+    fetchAllData: (accessToken: string) => {
         return API.get("/profile/alldata", {
-            headers: { Authorization: `Bearer ${accessToken}`}
+            headers: { Authorization: `Bearer ${accessToken}` }
         });
     },
 }

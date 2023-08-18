@@ -13,7 +13,7 @@
 }
 
 .profile-data {
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 500;
     line-height: 13px;
     letter-spacing: 0em;
@@ -26,9 +26,7 @@
 .detail-label {
     /* width: 53px; */
     height: 13px;
-    top: 16px;
-    left: 14.22222900390625px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 13px;
     letter-spacing: 0em;

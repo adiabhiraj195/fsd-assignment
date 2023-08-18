@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth-context";
 import useLocalStorage from "./use-localStorage";
 import jwt_decode from "jwt-decode";
+import AuthService from "../service/auth-service";
 
 interface Token {
     fullName: string;
@@ -34,11 +35,22 @@ const useAuth = () => {
     }
     // console.log(accessToken, "useAuth")
 
+    const logout = async()=>{
+        if(!accessToken) return;
+        try {
+            await AuthService.logout(accessToken);
+        } catch (error) {
+            console.log(error);
+        } finally{
+            destroyAuth();
+        }
+    }
     const destroyAuth = () => {
         setAccessToken(null);
         setFullName(null);
         setEmail(null);
         setIsAuthenticated(false);
+        localStorage.clear();
     };
 
     return {

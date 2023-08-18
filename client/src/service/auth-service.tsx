@@ -15,6 +15,10 @@ const AuthService = {
         password: string
     }) => {
         return API.post("/auth/login", payload);
+    },
+    logout: (accessToken: string)=>{
+        return API.delete("./auth/logout" ) //todo -  have to logout
+
     }
 }
 

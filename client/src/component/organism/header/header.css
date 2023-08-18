@@ -1,0 +1,71 @@
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: lightgreen;
+    position: relative;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.dashbord-wrap {
+    border: 1px solid #00000026;
+    border-radius: 9px;
+    box-shadow: 0px 1.7777777910232544px 1.7777777910232544px 0px #0000001A;
+
+}
+
+.dashbord-wrap h1 {
+    font-family: Outfit;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #222222E5;
+    padding: 8px 31px;
+}
+
+.header-profile-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 12px;
+    border: 1px solid #00000026;
+    border-radius: 8px;
+    box-shadow: 0px 1.7777777910232544px 1.7777777910232544px 0px #0000001A;
+    padding: 6px;
+}
+
+.profile-info{
+    margin: 0px 8px;
+}
+
+.profile-info p {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #373B5C;
+
+}
+
+.profile-info h2 {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #373B5C;
+
+}

@@ -19,7 +19,7 @@ const EducationCard = () => {
         // setEducationPopup(!educationPopup);
     }
     return (
-        <div className='education-card-wrap'>
+        <div className='education-card-wrap profile-element'>
             <div className='education-heading-wrap'>
                 <h2>Education</h2>
                 <Button btnName='Edit' onclick={handleEdit} />

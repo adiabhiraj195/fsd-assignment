@@ -4,10 +4,13 @@ import Button from '../../atoms/button/sm-button';
 import "./profile-img-card.css";
 
 const ProfileImageSection = () => {
+    const handleClick = () => {
+        console.log("Upload Photo");
+    }
     return (
-        <div className='profile-img-wrap'>
+        <div className='profile-img-wrap profile-element'>
             <ProfileImage />
-            {/* <Button btnName='Upload Photo' />  */}
+            <Button btnName='Upload Photo' onclick={handleClick} />
         </div>
     )
 }

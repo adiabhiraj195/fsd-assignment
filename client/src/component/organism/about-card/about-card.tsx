@@ -26,7 +26,7 @@ const AboutCard = ({
         // setAboutPopup(!aboutPopup);
     }
     return (
-        <div className='about-wrap'>
+        <div className='about-wrap profile-element'>
             <div className='about-heading'>
                 <h3>About <span>{userFirstName}</span></h3>
                 <Button btnName='Edit' onclick={handlePopup} />

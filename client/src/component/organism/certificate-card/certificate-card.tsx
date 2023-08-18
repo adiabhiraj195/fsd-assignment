@@ -27,7 +27,7 @@ const CertificateCard = ({
         // setCertificatePopup(!certificatePopup);
     }
     return (
-        <div className='certificate-card-wrap'>
+        <div className='certificate-card-wrap profile-element'>
             <div className='certificate-heading-wrap'>
                 <h2 className='certificate-heading'>Cerificates</h2>
                 <Button btnName='Edit' onclick={handleEdit} />

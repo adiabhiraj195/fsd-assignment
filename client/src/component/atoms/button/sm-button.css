@@ -7,23 +7,15 @@
 }
 
 .sm-btn {
-    width: Hug (82.44px);
-    height: Hug (19.89px);
-    padding: 4.44444465637207px 14.222222328186035px 4.44444465637207px 14.222222328186035px;
+    padding: 9.444445px 14.222222328186035px 8.444445px 14.222222328186035px;
     border-radius: 88.8888931274414px;
-    gap: 8.88888931274414px;
     background: #F0EFFA;
     border: none;
     font-family: Outfit;
     transition: 0.5s;
-
-    
-    font-size: 6px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 8px;
-    letter-spacing: 0em;
-    text-align: left;
-
 }
 
 .sm-btn:hover {
