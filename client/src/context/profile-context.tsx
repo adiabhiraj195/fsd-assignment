@@ -37,24 +37,24 @@ interface ProfileContextInterface {
             about: string;
         };
     }>>;
-    fullNamePopup: boolean;
-    setFullNamePopup: Dispatch<SetStateAction<boolean>>;
+    // fullNamePopup: boolean;
+    // setFullNamePopup: Dispatch<SetStateAction<boolean>>;
     editPopupToggle: boolean;
     setEditPopupToggle: Dispatch<SetStateAction<boolean>>;
-    emailPopup: boolean;
-    setEmailPopup: Dispatch<SetStateAction<boolean>>;
-    phonePopup: boolean;
-    setPhonePopup: Dispatch<SetStateAction<boolean>>;
-    aboutPopup: boolean;
-    setAboutPopup: Dispatch<SetStateAction<boolean>>;
-    oldAbout: string;
-    setOldAbout: Dispatch<SetStateAction<string>>;
-    skillPopup: boolean;
-    setSkillPopup: Dispatch<SetStateAction<boolean>>;
+    // emailPopup: boolean;
+    // setEmailPopup: Dispatch<SetStateAction<boolean>>;
+    // phonePopup: boolean;
+    // setPhonePopup: Dispatch<SetStateAction<boolean>>;
+    // aboutPopup: boolean;
+    // setAboutPopup: Dispatch<SetStateAction<boolean>>;
+    // oldAbout: string;
+    // setOldAbout: Dispatch<SetStateAction<string>>;
+    // skillPopup: boolean;
+    // setSkillPopup: Dispatch<SetStateAction<boolean>>;
     // skills: Array<string>;
     // setSkills: Dispatch<SetStateAction<string[]>>;
-    certificatePopup: boolean;
-    setCertificatePopup: Dispatch<SetStateAction<boolean>>;
+    // certificatePopup: boolean;
+    // setCertificatePopup: Dispatch<SetStateAction<boolean>>;
     // educationData: {
     //     from: string,
     //     to: string,
@@ -70,10 +70,10 @@ interface ProfileContextInterface {
     //     degree: string;
     //     about: string;
     // }>>;
-    educationPopup: boolean;
-    setEducationPopup: Dispatch<SetStateAction<boolean>>;
-//     editPagePopup: "name" | "email" | "phone" | "about" | "skills" | "certificate" | "education" | "none";
-//     setEditPagePopup: Dispatch<SetStateAction<"name" | "email" | "phone" | "about" | "skills" | "certificate" | "education" | "none">>;
+    // educationPopup: boolean;
+    // setEducationPopup: Dispatch<SetStateAction<boolean>>;
+    editPagePopup: string;
+    setEditPagePopup: Dispatch<SetStateAction<string>>;
 }
 
 const defaultValue = {
@@ -96,24 +96,24 @@ const defaultValue = {
         }
     },
     setUserAllData: () => { },
-    fullNamePopup: false,
-    setFullNamePopup: () => { },
+    // fullNamePopup: false,
+    // setFullNamePopup: () => { },
     editPopupToggle: false,
     setEditPopupToggle: () => { },
-    emailPopup: false,
-    setEmailPopup: () => { },
-    phonePopup: false,
-    setPhonePopup: () => { },
-    aboutPopup: false,
-    setAboutPopup: () => { },
-    oldAbout: "",
-    setOldAbout: () => { },
-    skillPopup: false,
-    setSkillPopup: () => { },
+    // emailPopup: false,
+    // setEmailPopup: () => { },
+    // phonePopup: false,
+    // setPhonePopup: () => { },
+    // aboutPopup: false,
+    // setAboutPopup: () => { },
+    // oldAbout: "",
+    // setOldAbout: () => { },
+    // skillPopup: false,
+    // setSkillPopup: () => { },
     // skills: [],
     // setSkills: () => { },
-    certificatePopup: false,
-    setCertificatePopup: () => { },
+    // certificatePopup: false,
+    // setCertificatePopup: () => { },
     // educationData: {
     //     from: "",
     //     to: "",
@@ -123,10 +123,10 @@ const defaultValue = {
 
     // },
     // setEducationData: () => { },
-    educationPopup: false,
-    setEducationPopup: () => { },
-    // editPagePopup: "none",
-    // setEditPagePopup: () => { },
+    // educationPopup: false,
+    // setEducationPopup: () => { },
+    editPagePopup: "none",
+    setEditPagePopup: () => { },
 }
 
 export const ProfileContext = createContext<ProfileContextInterface>(defaultValue);
@@ -138,47 +138,47 @@ interface ProfileProviderInterface {
 export const ProfileProvider = ({ children }: ProfileProviderInterface) => {
     const [userAllData, setUserAllData] = useState(defaultValue.userAllData);
     const [editPopupToggle, setEditPopupToggle] = useState<boolean>(defaultValue.editPopupToggle);
-    const [fullNamePopup, setFullNamePopup] = useState<boolean>(defaultValue.fullNamePopup);
-    const [emailPopup, setEmailPopup] = useState<boolean>(defaultValue.emailPopup);
-    const [phonePopup, setPhonePopup] = useState<boolean>(defaultValue.phonePopup);
-    const [aboutPopup, setAboutPopup] = useState<boolean>(defaultValue.aboutPopup);
-    const [oldAbout, setOldAbout] = useState<string>(defaultValue.oldAbout);
-    const [skillPopup, setSkillPopup] = useState<boolean>(defaultValue.skillPopup);
+    // const [fullNamePopup, setFullNamePopup] = useState<boolean>(defaultValue.fullNamePopup);
+    // const [emailPopup, setEmailPopup] = useState<boolean>(defaultValue.emailPopup);
+    // const [phonePopup, setPhonePopup] = useState<boolean>(defaultValue.phonePopup);
+    // const [aboutPopup, setAboutPopup] = useState<boolean>(defaultValue.aboutPopup);
+    // const [oldAbout, setOldAbout] = useState<string>(defaultValue.oldAbout);
+    // const [skillPopup, setSkillPopup] = useState<boolean>(defaultValue.skillPopup);
     // const [skills, setSkills] = useState<Array<string>>(defaultValue.skills);
-    const [certificatePopup, setCertificatePopup] = useState<boolean>(defaultValue.certificatePopup);
+    // const [certificatePopup, setCertificatePopup] = useState<boolean>(defaultValue.certificatePopup);
     // const [educationData, setEducationData] = useState(defaultValue.educationData);
-    const [educationPopup, setEducationPopup] = useState<boolean>(defaultValue.educationPopup)
-    // const [editPagePopup, setEditPagePopup] = useState(defaultValue.editPagePopup);
+    // const [educationPopup, setEducationPopup] = useState<boolean>(defaultValue.educationPopup)
+    const [editPagePopup, setEditPagePopup] = useState(defaultValue.editPagePopup);
 
     return (
         <ProfileContext.Provider
             value={{
                 userAllData,
                 setUserAllData,
-                fullNamePopup,
-                setFullNamePopup,
+                // fullNamePopup,
+                // setFullNamePopup,
                 editPopupToggle,
                 setEditPopupToggle,
-                emailPopup,
-                setEmailPopup,
-                phonePopup,
-                setPhonePopup,
-                aboutPopup,
-                setAboutPopup,
-                oldAbout,
-                setOldAbout,
-                skillPopup,
-                setSkillPopup,
+                // emailPopup,
+                // setEmailPopup,
+                // phonePopup,
+                // setPhonePopup,
+                // aboutPopup,
+                // setAboutPopup,
+                // oldAbout,
+                // setOldAbout,
+                // skillPopup,
+                // setSkillPopup,
                 // skills,
                 // setSkills,
-                certificatePopup,
-                setCertificatePopup,
+                // certificatePopup,
+                // setCertificatePopup,
                 // educationData,
                 // setEducationData,
-                educationPopup,
-                setEducationPopup,
-                // editPagePopup,
-                // setEditPagePopup,
+                // educationPopup,
+                // setEducationPopup,
+                editPagePopup,
+                setEditPagePopup,
             }
             }
         >

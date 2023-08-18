@@ -4,11 +4,19 @@ import { ProfileContext } from '../../../context/profile-context';
 import "./education-card.css";
 
 const EducationCard = () => {
-    const {userAllData, editPopupToggle, setEditPopupToggle, educationPopup, setEducationPopup } = useContext(ProfileContext);
+    const {
+        userAllData,
+        // editPopupToggle,
+        setEditPagePopup,
+        setEditPopupToggle,
+        // educationPopup,
+        // setEducationPopup
+    } = useContext(ProfileContext);
 
     const handleEdit = () => {
-        setEditPopupToggle(!editPopupToggle);
-        setEducationPopup(!educationPopup);
+        setEditPopupToggle(true);
+        setEditPagePopup("education");
+        // setEducationPopup(!educationPopup);
     }
     return (
         <div className='education-card-wrap'>

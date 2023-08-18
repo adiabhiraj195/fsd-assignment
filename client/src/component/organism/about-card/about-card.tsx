@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React, { useContext } from 'react'
 import Button from '../../atoms/button/sm-button';
 import "./about-card.css";
 import { ProfileContext } from '../../../context/profile-context';
@@ -12,13 +12,18 @@ const AboutCard = ({
     userFirstName,
     about,
 }: AboutCaraProps) => {
-    const {editPopupToggle, setEditPopupToggle, aboutPopup, setAboutPopup, setOldAbout} = useContext(ProfileContext);
-    
-    setOldAbout(about);
+    const {
+        // editPopupToggle,
+        setEditPopupToggle,
+        setEditPagePopup,
+        // aboutPopup,
+        // setAboutPopup,
+    } = useContext(ProfileContext);
 
-    const handlePopup = ()=>{
-        setEditPopupToggle(!editPopupToggle);
-        setAboutPopup(!aboutPopup);
+    const handlePopup = () => {
+        setEditPopupToggle(true);
+        setEditPagePopup("about");
+        // setAboutPopup(!aboutPopup);
     }
     return (
         <div className='about-wrap'>

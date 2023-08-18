@@ -19,31 +19,32 @@ const ProfileDetailCard = ({
   // const { accessToken } = useContext(AuthContext);
   const {
     //   userAllData,
-    fullNamePopup,
-    setFullNamePopup,
+    // fullNamePopup,
+    // setFullNamePopup,
     editPopupToggle,
     setEditPopupToggle,
-    emailPopup,
-    setEmailPopup,
-    phonePopup,
-    setPhonePopup,
-    // setEditPagePopup
+    // emailPopup,
+    // setEmailPopup,
+    // phonePopup,
+    // setPhonePopup,
+    setEditPagePopup
   } = useContext(ProfileContext);
-  
+
   const handleFullNamePopup = () => {
-    setEditPopupToggle(!editPopupToggle);
-    // setEditPagePopup("name");
-    setFullNamePopup(!fullNamePopup);
+    // e.preventDefault();
+    setEditPopupToggle(true);
+    setEditPagePopup("name");
+    // setFullNamePopup(!fullNamePopup);
   }
 
   const handleEmailPopup = () => {
-    setEditPopupToggle(!editPopupToggle);
-    setEmailPopup(!emailPopup);
+    setEditPopupToggle(true);
+    setEditPagePopup("email");
   }
 
   const handlePhonePopup = () => {
-    setEditPopupToggle(!editPopupToggle);
-    setPhonePopup(!phonePopup);
+    setEditPopupToggle(true);
+    setEditPagePopup("phone");
   }
 
   return (

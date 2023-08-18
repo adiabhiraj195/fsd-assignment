@@ -8,11 +8,18 @@ interface SkillCardInterface {
 }
 
 const SkillCard = ({ skills }: SkillCardInterface) => {
-    const { editPopupToggle, setEditPopupToggle, skillPopup, setSkillPopup } = useContext(ProfileContext);
+    const {
+        // editPopupToggle,
+        setEditPagePopup,
+        setEditPopupToggle,
+        // skillPopup,
+        // setSkillPopup
+    } = useContext(ProfileContext);
 
     const handleEdit = () => {
-        setEditPopupToggle(!editPopupToggle);
-        setSkillPopup(!skillPopup);
+        setEditPopupToggle(true);
+        // setSkillPopup(!skillPopup);
+        setEditPagePopup("skills");
     }
     return (
         <div className='skill-card-wrap'>

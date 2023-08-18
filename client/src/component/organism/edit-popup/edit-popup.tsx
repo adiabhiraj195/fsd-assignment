@@ -10,24 +10,32 @@ import EditEducation from '../../molecule/edit-education/edit-education';
 
 const EditPopup = () => {
   const {
-    fullNamePopup,
-    emailPopup,
-    phonePopup,
-    aboutPopup,
-    skillPopup,
-    certificatePopup,
-    educationPopup
+    // fullNamePopup,
+    // emailPopup,
+    // phonePopup,
+    // aboutPopup,
+    // skillPopup,
+    // certificatePopup,
+    // educationPopup,
+    editPagePopup
   } = useContext(ProfileContext);
   return (
     <div>
       <div>
-        {fullNamePopup && <EditName />}
-        {emailPopup && <EditEmail />}
-        {phonePopup && <EditPhone />}
-        {aboutPopup && <EditAbout />}
-        {skillPopup && <EditSkills />}
-        {certificatePopup && <EditCertificate />}
-        {educationPopup && <EditEducation/>}
+        {editPagePopup == "name" && <EditName />}
+        {editPagePopup == "email" && <EditEmail />}
+        {editPagePopup == "phone" && <EditPhone />}
+        {editPagePopup == "about" && <EditAbout />}
+        {editPagePopup == "skills" && <EditSkills />}
+        {editPagePopup == "certificate" && <EditCertificate />}
+        {editPagePopup == "education" && <EditEducation />}
+        {/* {fullNamePopup && <EditName />}
+          {emailPopup && <EditEmail />}
+          {phonePopup && <EditPhone />}
+          {aboutPopup && <EditAbout />}
+          {skillPopup && <EditSkills />}
+          {certificatePopup && <EditCertificate />}
+          {educationPopup && <EditEducation />} */}
       </div>
     </div>
   )

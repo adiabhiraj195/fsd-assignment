@@ -13,11 +13,18 @@ const CertificateCard = ({
     title,
     organisation
 }: CertificateCardInterface) => {
-    const { editPopupToggle, setEditPopupToggle, certificatePopup, setCertificatePopup } = useContext(ProfileContext);
+    const {
+        //  editPopupToggle,
+        setEditPopupToggle,
+        setEditPagePopup
+        //    certificatePopup,
+        // setCertificatePopup 
+    } = useContext(ProfileContext);
 
     const handleEdit = () => {
-        setEditPopupToggle(!editPopupToggle);
-        setCertificatePopup(!certificatePopup);
+        setEditPopupToggle(true);
+        setEditPagePopup("certificate");
+        // setCertificatePopup(!certificatePopup);
     }
     return (
         <div className='certificate-card-wrap'>

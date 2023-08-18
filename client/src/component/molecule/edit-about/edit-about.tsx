@@ -5,8 +5,8 @@ import ProfileService from '../../../service/profile-service';
 import { ProfileContext } from '../../../context/profile-context';
 
 const EditAbout = () => {
-    const { oldAbout } = useContext(ProfileContext);
-    const [about, setAbout] = useState<string>(oldAbout);
+    const { userAllData, setEditPopupToggle, setEditPagePopup } = useContext(ProfileContext);
+    const [about, setAbout] = useState<string>(userAllData.about);
     const accessToken = localStorage.getItem("Token");
 
     const handleInput = (value: string) => {
@@ -24,16 +24,24 @@ const EditAbout = () => {
             console.log(error);
         }
     }
+
+    const handleToggle = () => {
+        setEditPagePopup("");
+        setEditPopupToggle(false);
+    }
     return (
-        <div>
-            <TextArea
-                value={about}
-                id='edit-about'
-                onInput={handleInput}
-                label='About'
-            />
-            <Button btnName='Update' onclick={handleEdit} />
-        </div>
+        <>
+            <div onClick={handleToggle}>X</div>
+            <div>
+                <TextArea
+                    value={about}
+                    id='edit-about'
+                    onInput={handleInput}
+                    label='About'
+                />
+                <Button btnName='Update' onclick={handleEdit} />
+            </div>
+        </>
     )
 }
 
