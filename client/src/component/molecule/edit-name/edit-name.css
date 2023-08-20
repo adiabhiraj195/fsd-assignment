@@ -1,0 +1,12 @@
+.popup-content-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+.btn-container{
+    padding-top: 10px;
+}
+.input-container{
+    width: 365px;
+}

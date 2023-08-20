@@ -38,17 +38,12 @@ const EditEmail = () => {
         console.log("Update Clicked");
     }
 
-    const handleToggle = () => {
-        setEditPagePopup("");
-        setEditPopupToggle(false);
-    }
     const handleInput = (value: string) => {
         setEmail(value);
     }
     return (
-        <>
-            <div onClick={handleToggle}>X</div>
-            <div>
+        <div className='popup-content-wrap'>
+            <div className='input-container'>
                 <TextField
                     id='edit-email'
                     value={email}
@@ -57,9 +52,11 @@ const EditEmail = () => {
                     placeholder='Email'
                     onInput={handleInput}
                 />
+            </div>
+            <div className='btn-container'>
                 <Button btnName='Update' onclick={handleUpdate} />
             </div>
-        </>
+        </div>
     )
 }
 

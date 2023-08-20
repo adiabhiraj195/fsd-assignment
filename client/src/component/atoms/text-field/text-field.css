@@ -5,4 +5,14 @@
 }
 .input-field{
     padding: 4px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Outfit;
+    margin: 6px 0px;
+    outline: none;
+    border: none;
+}
+.input-label{
+
+    color: rgb(41, 41, 41);
 }

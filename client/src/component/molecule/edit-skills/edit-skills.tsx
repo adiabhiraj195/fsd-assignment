@@ -5,7 +5,7 @@ import ProfileService from '../../../service/profile-service';
 import { ProfileContext } from '../../../context/profile-context';
 
 const EditSkills = () => {
-    const { userAllData, setEditPagePopup, setEditPopupToggle } = useContext(ProfileContext);
+    const { userAllData } = useContext(ProfileContext);
     const [newSkill, setNewSkill] = useState("");
     const accessToken = localStorage.getItem("Token");
 
@@ -24,25 +24,23 @@ const EditSkills = () => {
         console.log("Update Clicked");
     }
 
-    const handleToggle = () => {
-        setEditPagePopup("");
-        setEditPopupToggle(false);
-    }
     const handleInput = (value: string) => {
         setNewSkill(value);
     }
     return (
-        <>
-            <div onClick={handleToggle}>X</div>
-            <div>
+        <div className='popup-content-wrap'>
+            <ul>
                 {userAllData.skills?.map((skill) => {
                     return (
-                        <>
+                        <li>
+
                             <h3>{skill}</h3>
                             {/* <Button /> */}
-                        </>
+                        </li>
                     )
                 })}
+            </ul>
+            <div className='input-container'>
                 <TextField
                     id='edit-phone'
                     value={newSkill}
@@ -50,10 +48,12 @@ const EditSkills = () => {
                     placeholder='New Skill'
                     onInput={handleInput}
                 />
-                <Button btnName='Update' onclick={handleUpdate} />
-
             </div>
-        </>
+            <div className='btn-container'>
+                <Button btnName='Update' onclick={handleUpdate} />
+            </div>
+
+        </div>
     )
 }
 

@@ -6,7 +6,7 @@ import { ProfileContext } from '../../../context/profile-context';
 import ProfileService from '../../../service/profile-service';
 
 const EditEducation = () => {
-    const { userAllData, setEditPagePopup, setEditPopupToggle } = useContext(ProfileContext);
+    const { userAllData } = useContext(ProfileContext);
     const [organisation, setOrganisation] = useState(userAllData.education.organisation);
     const [course, setCourse] = useState(userAllData.education.degree);
     const [from, setFrom] = useState(userAllData.education.from);
@@ -30,10 +30,6 @@ const EditEducation = () => {
         }
     }
 
-    const handleToggle = () => {
-        setEditPagePopup("");
-        setEditPopupToggle(false);
-    }
     const handleOrganisation = (value: string) => {
         setOrganisation(value);
     }
@@ -50,10 +46,8 @@ const EditEducation = () => {
         setAbout(value);
     }
     return (
-        <>
-            <div onClick={handleToggle}>X</div>
-
-            <div>
+        <div className='popup-content-wrap'>
+            <div className='input-container'>
                 <TextField
                     label='Organisation'
                     type='text'
@@ -92,10 +86,11 @@ const EditEducation = () => {
                     onInput={handleAbout}
                     label='About'
                 />
-
+            </div>
+            <div className='btn-container'>
                 <Button btnName='Update' onclick={handleUpdate} />
             </div>
-        </>
+        </div>
     )
 }
 

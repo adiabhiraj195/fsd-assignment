@@ -7,35 +7,29 @@ import EditAbout from '../../molecule/edit-about/edit-about';
 import EditSkills from '../../molecule/edit-skills/edit-skills';
 import EditCertificate from '../../molecule/edit-certificate/edit-certificate';
 import EditEducation from '../../molecule/edit-education/edit-education';
+import "./edit-popup.css";
+import { GrClose } from "react-icons/gr";
 
 const EditPopup = () => {
-  const {
-    // fullNamePopup,
-    // emailPopup,
-    // phonePopup,
-    // aboutPopup,
-    // skillPopup,
-    // certificatePopup,
-    // educationPopup,
-    editPagePopup
-  } = useContext(ProfileContext);
+  const { editPagePopup, setEditPagePopup, setEditPopupToggle } = useContext(ProfileContext);
+
+  const handleToggle = () => {
+    setEditPagePopup("");
+    setEditPopupToggle(false);
+  }
   return (
-    <div>
-      <div>
-        {editPagePopup == "name" && <EditName />}
-        {editPagePopup == "email" && <EditEmail />}
-        {editPagePopup == "phone" && <EditPhone />}
-        {editPagePopup == "about" && <EditAbout />}
-        {editPagePopup == "skills" && <EditSkills />}
-        {editPagePopup == "certificate" && <EditCertificate />}
-        {editPagePopup == "education" && <EditEducation />}
-        {/* {fullNamePopup && <EditName />}
-          {emailPopup && <EditEmail />}
-          {phonePopup && <EditPhone />}
-          {aboutPopup && <EditAbout />}
-          {skillPopup && <EditSkills />}
-          {certificatePopup && <EditCertificate />}
-          {educationPopup && <EditEducation />} */}
+    <div className='edit-pg-bg'>
+      <div className='edit-card-container'>
+        <div className='popup-content'>
+          <div className='popup-close' onClick={handleToggle}><GrClose /></div>
+          {editPagePopup == "name" && <EditName />}
+          {editPagePopup == "email" && <EditEmail />}
+          {editPagePopup == "phone" && <EditPhone />}
+          {editPagePopup == "about" && <EditAbout />}
+          {editPagePopup == "skills" && <EditSkills />}
+          {editPagePopup == "certificate" && <EditCertificate />}
+          {editPagePopup == "education" && <EditEducation />}
+        </div>
       </div>
     </div>
   )

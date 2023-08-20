@@ -36,9 +36,8 @@ const EditPhone = () => {
         setPhone(value);
     }
     return (
-        <>
-            <div onClick={handleToggle}>X</div>
-            <div>
+        <div className='popup-content-wrap'>
+            <div className='input-container'>
                 <TextField
                     id='edit-phone'
                     value={phone}
@@ -47,9 +46,11 @@ const EditPhone = () => {
                     placeholder='phone Number'
                     onInput={handleInput}
                 />
+            </div>
+            <div className='btn-container'>
                 <Button btnName='Update' onclick={handleUpdate} />
             </div>
-        </>
+        </div>
     )
 }
 

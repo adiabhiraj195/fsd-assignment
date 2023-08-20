@@ -1,13 +1,12 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import TextField from '../../atoms/text-field/text-field';
 import Button from '../../atoms/button/sm-button';
 import ProfileService from '../../../service/profile-service';
-import { ProfileContext } from '../../../context/profile-context';
+import "./edit-name.css";
 
 const EditName = () => {
     const [fullName, setFullName] = useState("");
     const accessToken = localStorage.getItem("Token");
-    const { setEditPagePopup, setEditPopupToggle}= useContext(ProfileContext);
     const handleUpdate = async () => {
 
         try {
@@ -21,18 +20,14 @@ const EditName = () => {
         }
         console.log("Update Clicked");
     }
-    
-    const handleToggle = ()=>{
-        setEditPagePopup("");
-        setEditPopupToggle(false);
-    }
+
+
     const handleInput = (value: string) => {
         setFullName(value);
     }
     return (
-        <>
-            <div onClick={handleToggle}>X</div>
-            <div>
+        <div className='popup-content-wrap'>
+            <div className='input-container'>
                 <TextField
                     id='edit-name'
                     value={fullName}
@@ -41,10 +36,11 @@ const EditName = () => {
                     placeholder='Full Name'
                     onInput={handleInput}
                 />
-                <Button btnName='Update' onclick={handleUpdate} />
-
             </div>
-        </>
+            <div className='btn-container'>
+                <Button btnName='Update' onclick={handleUpdate} />
+            </div>
+        </div>
     )
 }
 

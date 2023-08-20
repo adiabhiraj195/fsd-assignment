@@ -30,18 +30,19 @@ const EditAbout = () => {
         setEditPopupToggle(false);
     }
     return (
-        <>
-            <div onClick={handleToggle}>X</div>
-            <div>
+        <div className='popup-content-wrap'>
+            <div className='input-container'>
                 <TextArea
                     value={about}
                     id='edit-about'
                     onInput={handleInput}
                     label='About'
                 />
+            </div>
+            <div className='btn-container'>
                 <Button btnName='Update' onclick={handleEdit} />
             </div>
-        </>
+        </div>
     )
 }
 
