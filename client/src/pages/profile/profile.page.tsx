@@ -21,7 +21,7 @@ const ProfilePage = () => {
 
     // const { accessToken } = useContext(AuthContext);
     const accessToken = localStorage.getItem("Token");
-    console.log(accessToken);
+    // console.log(accessToken);
     // let userData: any = {};
     const fetchAllData = async () => {
         try {
@@ -46,7 +46,7 @@ const ProfilePage = () => {
                     about: result.data.education.about,
                 }
             });
-            console.log(userAllData);
+            // console.log(userAllData);
 
         } catch (error) {
             console.log(error);

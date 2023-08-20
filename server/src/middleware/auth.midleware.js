@@ -5,7 +5,8 @@ const authenticate = (req, res, next) => {
     // console.log(authHeader);
 
     let token = authHeader && authHeader.split(" ")[1];
-    token = token.slice(1,-1);
+    // console.log(token);
+    token = token.slice(1,-1);      
 
     if (!token) return res.sendStatus(401);
     // console.log(token);
@@ -15,7 +16,7 @@ const authenticate = (req, res, next) => {
         (err, decoded) => {
             console.log(err)
             if (err) return res.sendStatus(403);
-            console.log("after error appear")
+            // console.log("after error appear")
             try {
                 const { fullName, email } = decoded.requestUser.user;
                 // console.log(email);

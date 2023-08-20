@@ -38,6 +38,10 @@ const userSchema = mongoose.Schema({
         organisation: String,
         degree: String,
         about: String
+    },
+    islogedin : {
+        type: Boolean,
+        default:false
     }
     // userdetail: {
     //     type: mongoose.Schema.Types.ObjectId,

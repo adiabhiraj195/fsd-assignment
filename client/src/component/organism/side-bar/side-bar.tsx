@@ -1,11 +1,18 @@
 import React from 'react'
 import "./side-bar.css";
 import { GrNext } from "react-icons/gr";
-
+import useAuth from "../../../hooks/use-auth";
+import { useNavigate } from 'react-router-dom';
 const SideBar = () => {
-    
-    const handleLogout = ()=>{
+    const { logout } = useAuth();
+    const navigate = useNavigate();
 
+    const handleLogout = async() => {
+        const logoutResponse = await logout();
+        if(logoutResponse){
+           return navigate("/login");
+        }
+        console.log("somthing went wrong")
     }
     return (
         <div className='side-bar-wrap'>

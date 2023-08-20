@@ -33,7 +33,7 @@ const Login = () => {
             const result = await AuthService.login({ email, password });
             // localStorage.setItem("Token", result.data.accessToken);
             login(result.data.accessToken);
-            console.log(result, result.data.accessToken);
+            // console.log(result, result.data.accessToken);
             navigate("/profile");
         } catch (error) {
             console.log(error);

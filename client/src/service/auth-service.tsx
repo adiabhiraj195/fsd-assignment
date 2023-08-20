@@ -16,8 +16,10 @@ const AuthService = {
     }) => {
         return API.post("/auth/login", payload);
     },
-    logout: (accessToken: string)=>{
-        return API.delete("./auth/logout" ) //todo -  have to logout
+    logout: (accessToken: string) => {
+        return API.post("/auth/logout", {}, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        }) //todo -  have to logout
 
     }
 }

@@ -36,13 +36,17 @@ const useAuth = () => {
     // console.log(accessToken, "useAuth")
 
     const logout = async()=>{
+        const accessToken = localStorage.getItem("Token");
+        // console.log(accessToken);
         if(!accessToken) return;
         try {
-            await AuthService.logout(accessToken);
+            const response = await AuthService.logout(accessToken);
+            if(response){
+                destroyAuth();
+            }
+            return response;
         } catch (error) {
             console.log(error);
-        } finally{
-            destroyAuth();
         }
     }
     const destroyAuth = () => {
@@ -62,7 +66,8 @@ const useAuth = () => {
             setEmail,
             setFullName,
             setIsAuthenticated,
-            setAccessToken
+            setAccessToken,
+            logout,
         };
 };
 

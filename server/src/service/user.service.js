@@ -31,11 +31,20 @@ class UserService {
         const requestUser = await this.getRequestUser({ user });
 
         const accessToken = jwt.sign({ requestUser }, process.env.ACCESS_TOKEN_SECRET, { });
-
+        user.islogedin = true;
+        user.save();
         //todo add expireIn to the token 
         //todo- add refresh token
 
         return { accessToken };
+    }
+
+    logoutUser = async(user)=>{
+        user.islogedin = false;
+        user.save();
+        return {
+            status: "user loged out"
+        }
     }
 
     getRequestUser = (user) => {

@@ -41,6 +41,20 @@ class UserController {
         const loginResponse = await userService.loginResponse(user);
         return res.status(200).json(loginResponse);
 
+    };
+
+    logout = async (req, res) => {
+        const err = validationResult(req);
+        if (!err.isEmpty()) return res.status(400).json(err);
+        const { email } = req.user;
+
+        const user = await userService.findUserByEmail(email);
+        if (!user) {
+            return res.status(400).json({ error: "something went wrong try again" });
+        }
+        const logoutResponse = await userService.logoutUser(user);
+        return res.status(200).json(logoutResponse);
+
     }
 }
 const userController = new UserController();
