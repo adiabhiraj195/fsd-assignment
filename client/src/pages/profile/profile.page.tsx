@@ -11,6 +11,7 @@ import EducationCard from '../../component/organism/education-card/education-car
 import Header from '../../component/organism/header/header';
 import SideBar from '../../component/organism/side-bar/side-bar';
 import "./profile.css";
+import ProfessionalDetailCard from '../../component/organism/professional-detail/professional-detail';
 
 const ProfilePage = () => {
     const {
@@ -76,6 +77,7 @@ const ProfilePage = () => {
                             <SkillCard skills={userAllData.skills} />
                         </div>
                         <div className='profile-sub-container-rigth'>
+                            <ProfessionalDetailCard/>
                             <CertificateCard title={userAllData.certificate.title} organisation={userAllData.certificate.organisation} />
                             <EducationCard />
                         </div>

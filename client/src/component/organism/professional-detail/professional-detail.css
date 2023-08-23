@@ -1,0 +1,23 @@
+.professional-detail-card-container {
+    width: 250px;
+    border: 1px solid #CECECE;
+    border-radius: 4px;
+    padding: 10px 13px;
+    margin-bottom: 20px;
+}
+
+.professional-detail-heading {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #222222E5;
+
+}
+
+.professional-body-wrap {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #49454FCC;
+
+}

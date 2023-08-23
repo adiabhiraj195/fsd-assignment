@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import TextField from '../../component/atoms/text-field/text-field';
 import AuthService from '../../service/auth-service';
 import validator from "validator";
-import { useNavigate } from "react-router-dom";
-import Button from '../../component/atoms/button/sm-button';
+import { Link, useNavigate } from "react-router-dom";
+import "./register.css";
 
 const Register = () => {
     const [fullName, setFullName] = useState<string>("");
@@ -59,39 +59,49 @@ const Register = () => {
         setPassword2(value);
     }
     return (
-        <div className='register-page'>
+        <div className='auth-page'>
             <div className='auth-container'>
-                <TextField
-                    id='fullName-register'
-                    value={fullName}
-                    placeholder='Full Name'
-                    type='text'
-                    onInput={handleOnInputName}
-                />
-                <TextField
-                    id='email-register'
-                    value={email}
-                    placeholder='Email'
-                    type='email'
-                    onInput={handleOnInputEmail}
-                />
-                <TextField
-                    id='passowrd-register'
-                    value={password1}
-                    placeholder='Password'
-                    type='password'
-                    onInput={handleOnInputPassword1}
-                />
-                <TextField
-                    id='confirm-password-register'
-                    value={password2}
-                    placeholder='Confirm Password'
-                    type='password'
-                    onInput={handleOnInputPassword2}
-                />
-
-                <button onClick={registerUser}>Register</button>
-                {/* <Button btnName='Upload Photo' /> */}
+                <h2>Register</h2>
+                <div className='input-container'>
+                    <TextField
+                        id='fullName-register'
+                        value={fullName}
+                        placeholder='Full Name'
+                        type='text'
+                        onInput={handleOnInputName}
+                        label='Full Name'
+                    />
+                    <TextField
+                        id='email-register'
+                        value={email}
+                        placeholder='Email'
+                        type='email'
+                        onInput={handleOnInputEmail}
+                        label='Email'
+                    />
+                    <TextField
+                        id='passowrd-register'
+                        value={password1}
+                        placeholder='Password'
+                        type='password'
+                        onInput={handleOnInputPassword1}
+                        label='Password'
+                    />
+                    <TextField
+                        id='confirm-password-register'
+                        value={password2}
+                        placeholder='Confirm Password'
+                        type='password'
+                        onInput={handleOnInputPassword2}
+                        label='Confirm Password'
+                    />
+                </div>
+                <div className='login-link-container'>
+                    <Link to={"/login"}>already have account!</Link>
+                </div>
+                <div className="btn-container">
+                    <button className='register-btn' onClick={registerUser}>Register</button>
+                </div>
             </div>
         </div>
     )
