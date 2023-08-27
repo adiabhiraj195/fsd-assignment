@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState , useContext} from 'react';
 import TextArea from '../../component/atoms/text-area/text-area';
 import TextField from '../../component/atoms/text-field/text-field';
 import ProfileService from '../../service/profile-service';
 import { useNavigate } from 'react-router-dom';
 import "./detail-form.css";
+import { AuthContext } from '../../context/auth-context';
 
 const DetailForm = () => {
     const [fullName, setFullName] = useState("");
@@ -19,6 +20,7 @@ const DetailForm = () => {
     const [about, setAbout] = useState("");
     const navigate = useNavigate();
     const accessToken = localStorage.getItem("Token");
+    const {email}= useContext(AuthContext);
 
     const handleSubmit = () => {
         if (accessToken == null) return;
@@ -78,7 +80,7 @@ const DetailForm = () => {
     }
     return (
         <div className='form-page'>
-            <h3 className='form-email-head'>example@email.com</h3>
+            <h3 className='form-email-head'>{email}</h3>
             <div className='form-main-container'>
                 <div className='form-wraper'>
                     <div className='form-page-left-wrap'>

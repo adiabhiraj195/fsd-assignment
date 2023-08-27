@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import TextField from '../../component/atoms/text-field/text-field';
 import AuthService from '../../service/auth-service';
 import validator from "validator";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
+import { AuthContext } from '../../context/auth-context';
 
 const Register = () => {
     const [fullName, setFullName] = useState<string>("");
@@ -11,6 +12,7 @@ const Register = () => {
     const [password1, setPassword1] = useState<string>("");
     const [password2, setPassword2] = useState<string>("");
     const navigate = useNavigate();
+    const { setGEmail } = useContext(AuthContext);
 
     const validateData = () => {
         let isValid = true;
@@ -38,7 +40,8 @@ const Register = () => {
                 password1,
                 password2
             });
-            navigate("/login");
+            navigate("/detail-form");
+            // navigate("/login");
 
         } catch (error) {
             console.error(error)
@@ -51,6 +54,7 @@ const Register = () => {
     }
     const handleOnInputEmail = (value: string) => {
         setEmail(value);
+        setGEmail(value);
     }
     const handleOnInputPassword1 = (value: string) => {
         setPassword1(value);

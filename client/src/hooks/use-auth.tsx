@@ -14,7 +14,7 @@ const useAuth = () => {
         fullName,
         setFullName,
         email,
-        setEmail,
+        setGEmail,
         isAuthenticated,
         setIsAuthenticated,
         accessToken,
@@ -28,7 +28,7 @@ const useAuth = () => {
         // console.log("useAuth login funcion")
         // console.log(accessToken," useAuth login funcion")
         setFullName(fullName);
-        setEmail(email);
+        setGEmail(email);
         setIsAuthenticated(true);
         setLocalToken(accessToken);
         setAccessToken(accessToken);
@@ -52,7 +52,7 @@ const useAuth = () => {
     const destroyAuth = () => {
         setAccessToken(null);
         setFullName(null);
-        setEmail(null);
+        setGEmail(null);
         setIsAuthenticated(false);
         localStorage.clear();
     };
@@ -63,7 +63,7 @@ const useAuth = () => {
             isAuthenticated,
             accessToken,
             login,
-            setEmail,
+            setGEmail,
             setFullName,
             setIsAuthenticated,
             setAccessToken,

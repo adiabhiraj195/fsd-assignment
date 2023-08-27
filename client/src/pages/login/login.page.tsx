@@ -26,9 +26,9 @@ const Login = () => {
 
     const loginUser = async () => {
         // e.preventDefault();
-        // if (!validate()) {
-        //     return;
-        // }
+        if (!validate()) {
+            return;
+        }
 
         try {
             const result = await AuthService.login({ email, password });

@@ -8,7 +8,7 @@ interface AuthContextInterface {
     fullName: string | null;
     setFullName: Dispatch<SetStateAction<string | null>>;
     email: string | null;
-    setEmail: Dispatch<SetStateAction<string | null>>;
+    setGEmail: Dispatch<SetStateAction<string | null>>;
 }
 
 const defaultValue = {
@@ -19,7 +19,7 @@ const defaultValue = {
     fullName: null,
     setFullName: () => { },
     email: null,
-    setEmail: () => { }
+    setGEmail: () => { }
 };
 
 export const AuthContext = createContext<AuthContextInterface>(defaultValue);
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }: AuthProviderInterface) => {
     const [accessToken, setAccessToken] = useState<string | null>(defaultValue.accessToken);
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(defaultValue.isAuthenticated);
     const [fullName, setFullName] = useState<string | null>(defaultValue.fullName);
-    const [email, setEmail] = useState<string | null>(defaultValue.email);
+    const [email, setGEmail] = useState<string | null>(defaultValue.email);
     // console.log(accessToken)
 
     return (
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }: AuthProviderInterface) => {
                 fullName,
                 setFullName,
                 email,
-                setEmail
+                setGEmail
             }}
         >
             {children}
