@@ -70,6 +70,23 @@ const ProfileService = {
             headers: { Authorization: `Bearer ${accessToken}` }
         });
     },
+    sendAllData: (accessToken: string, payload: {
+        fullName: string;
+        phone: string;
+        skill: string;
+        course: string;
+        organisation: string;
+        eOrganisation: string;
+        from: string;
+        to: string;
+        eCourse: string;
+        eAbout: string;
+        about: string;
+    }) => {
+        return API.post("/firstData", payload, {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        })
+    }
 }
 
 export default ProfileService;

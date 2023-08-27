@@ -7,6 +7,7 @@ import Test from './pages/test';
 import ProfilePage from './pages/profile/profile.page';
 import { AuthProvider } from './context/auth-context';
 import { ProfileProvider } from './context/profile-context';
+import DetailForm from './pages/detail-from/detail-form';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path='/login' Component={Login} />
               <Route path='/test' Component={Test} />
               <Route path='/profile' Component={ProfilePage} />
+              <Route path='detail-form' Component={DetailForm}/>
             </Routes>
           </ProfileProvider>
         </AuthProvider>

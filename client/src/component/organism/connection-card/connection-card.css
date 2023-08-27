@@ -1,0 +1,69 @@
+.connection-card-wrap {
+    width: 258px;
+    height: 139px;
+    border-radius: 4.44444465637207px;
+    border: 0.89px solid #00000026;
+    box-shadow: 0px 1.7777777910232544px 1.7777777910232544px 0px #0000001A;
+    background: #c0c0c026;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline-start: 10px;
+}
+
+.connection-card-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    height: 100%;
+}
+
+.connection-card-detail h2 {
+    font-family: Outfit;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    color: #222222E5;
+
+}
+
+.connection-work-wrap p {
+    font-family: Outfit;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    color: #222222E5;
+
+}
+
+.connection-btn-wrap button {
+    /* width: 112px; */
+    /* height: 16px; */
+    padding: 1px 8px 1px 6px;
+    border-radius: 64.587158203125px;
+    border: none;
+    background: #BAB6EB;
+    font-family: Outfit;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1F1F1FCC;
+
+
+}
+
+.conector-profile-image {
+    width: 89px;
+    height: 89px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8F8FF;
+    border: 0.89px solid #F8F8FF
+}
+
+.conector-profile-image img {
+    height: 100%;
+}

@@ -74,6 +74,8 @@ interface ProfileContextInterface {
     // setEducationPopup: Dispatch<SetStateAction<boolean>>;
     editPagePopup: string;
     setEditPagePopup: Dispatch<SetStateAction<string>>;
+    toggleProfilePage: boolean;
+    setToggleProfilePage:  Dispatch<SetStateAction<boolean>>;
 }
 
 const defaultValue = {
@@ -127,6 +129,8 @@ const defaultValue = {
     // setEducationPopup: () => { },
     editPagePopup: "none",
     setEditPagePopup: () => { },
+    toggleProfilePage: true,
+    setToggleProfilePage: ()=>{},
 }
 
 export const ProfileContext = createContext<ProfileContextInterface>(defaultValue);
@@ -149,6 +153,7 @@ export const ProfileProvider = ({ children }: ProfileProviderInterface) => {
     // const [educationData, setEducationData] = useState(defaultValue.educationData);
     // const [educationPopup, setEducationPopup] = useState<boolean>(defaultValue.educationPopup)
     const [editPagePopup, setEditPagePopup] = useState(defaultValue.editPagePopup);
+    const [toggleProfilePage, setToggleProfilePage] = useState<boolean>(defaultValue.toggleProfilePage);
 
     return (
         <ProfileContext.Provider
@@ -179,6 +184,8 @@ export const ProfileProvider = ({ children }: ProfileProviderInterface) => {
                 // setEducationPopup,
                 editPagePopup,
                 setEditPagePopup,
+                toggleProfilePage,
+                setToggleProfilePage
             }
             }
         >

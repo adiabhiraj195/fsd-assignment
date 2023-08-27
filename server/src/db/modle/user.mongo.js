@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const certificateSchema = require("./certificate.mongo");
+// const certificateSchema = require("./certificate.mongo");
 const experienceSchema = require("./experience.mongo.js");
 
 const userSchema = mongoose.Schema({

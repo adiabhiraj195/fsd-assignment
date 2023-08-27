@@ -9,6 +9,9 @@
     /* bottom: 0; */
     background-color: whitesmoke;
     width: 240px;
+    box-shadow: 0px 1.7777777910232544px 1.7777777910232544px 0px #0000001A;
+    border-right: 0.89px solid #00000026;
+
 }
 
 .side-bar-top {

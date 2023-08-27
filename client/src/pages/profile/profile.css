@@ -8,13 +8,13 @@
     display: flex;
     align-items: center;
     position: relative;
-    height: 89%;
+    height: 87%;
 }
 
 .main-content-container {
     display: flex;
     flex-direction: column;
-    padding-top: 8px;
+    /* padding-top: 8px; */
     width: 100%;
     height: 100%;
     align-items: center;
@@ -38,18 +38,25 @@
 }
 
 .profile-main-card {
-    background-color: whitesmoke;
+    background-color: rgb(235, 235, 235);
     display: flex;
     position: absolute;
     width: 80%;
     margin-right: auto;
     top: 10%;
-    border: 1.78px solid #EBEBEE;
+    border: 1.78px solid #00000026;
     border-radius: 9px;
-    /* height: 100%; */
+    height: -webkit-fill-available;
     padding: 20px 30px 37px 30px;
     justify-content: space-around;
 }
 .profile-element{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+.profile-sub-container-left, .profile-sub-container-rigth{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    align-items:center;
 }

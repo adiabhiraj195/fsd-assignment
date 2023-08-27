@@ -9,6 +9,9 @@
     width: 100%;
     top: 0;
     left: 0;
+    border-bottom: 0.89px solid #00000026;
+    box-shadow: 0px 1.7777777910232544px 1.7777777910232544px 0px #0000001A;
+
 }
 
 .dashbord-wrap {

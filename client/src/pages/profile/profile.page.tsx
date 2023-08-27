@@ -11,13 +11,15 @@ import EducationCard from '../../component/organism/education-card/education-car
 import Header from '../../component/organism/header/header';
 import SideBar from '../../component/organism/side-bar/side-bar';
 import "./profile.css";
-import ProfessionalDetailCard from '../../component/organism/professional-detail/professional-detail';
+// import ProfessionalDetailCard from '../../component/organism/professional-detail/professional-detail';
+import ConnectionCard from '../../component/organism/connection-card/connection-card';
 
 const ProfilePage = () => {
     const {
         userAllData,
         setUserAllData,
         editPopupToggle,
+        toggleProfilePage
     } = useContext(ProfileContext);
 
     // const { accessToken } = useContext(AuthContext);
@@ -66,27 +68,39 @@ const ProfilePage = () => {
             <div className='container-second'>
                 <SideBar />
                 <div className='main-content-container'>
-                    <div className='profile-bg-banner'>
-                        <p>My Profile</p>
-                    </div>
-                    <div className='profile-main-card'>
-                        <div className='profile-sub-container-left'>
-                            <ProfileImageSection />
-                            <ProfileDetailCard name={userAllData.fullName} email={userAllData.email} phone={userAllData.phone} />
-                            <AboutCard userFirstName={userAllData.fullName.substring(0, userAllData.fullName.indexOf(' '))} about={userAllData.about} />
-                            <SkillCard skills={userAllData.skills} />
-                        </div>
-                        <div className='profile-sub-container-rigth'>
-                            <ProfessionalDetailCard/>
-                            <CertificateCard title={userAllData.certificate.title} organisation={userAllData.certificate.organisation} />
-                            <EducationCard />
-                        </div>
-                    </div>
+                    {toggleProfilePage ?
+                        <>
+                            <div className='profile-bg-banner'>
+                                <p>My Profile</p>
+                            </div>
+                            <div className='profile-main-card'>
+                                <div className='profile-sub-container-left'>
+                                    <ProfileImageSection />
+                                    <ProfileDetailCard name={userAllData.fullName} email={userAllData.email} phone={userAllData.phone} />
+                                    <AboutCard userFirstName={userAllData.fullName.substring(0, userAllData.fullName.indexOf(' '))} about={userAllData.about} />
+                                </div>
+                                <div className='profile-sub-container-rigth'>
+                                    <SkillCard skills={userAllData.skills} />
+                                    {/* <ProfessionalDetailCard/> */}
+                                    <CertificateCard title={userAllData.certificate.title} organisation={userAllData.certificate.organisation} />
+                                    <EducationCard />
+                                </div>
+                            </div>
+                        </> :
+                        <>
+                            <div className='profile-bg-banner'>
+                                <p>My Conection</p>
+                            </div>
+                            <div className='profile-main-card'>
+                                {/* <ConnectionCard /> */}
+                            </div>
+                        </>
+                    }
                 </div>
                 {
                     editPopupToggle && <EditPopup />
                 }
-            </div>
+            </div >
             {/* </div> */}
         </>
     )

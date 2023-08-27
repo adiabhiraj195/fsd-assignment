@@ -28,7 +28,7 @@ const TextArea = ({
                 onInput={(e) => onInput((e.target as HTMLTextAreaElement).value)}
                 className='input-field'
                 cols={5}
-                rows={8}
+                rows={6}
             />
         </div>
     )
